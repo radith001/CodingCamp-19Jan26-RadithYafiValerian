@@ -3,10 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Modern To-Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <h2>Welcome to my website</h2>
+
+    <div class="container">
+        <header>
+            <h1>📋To-do List</h1>
+        </header>
+
+        <form id="todo-form">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="Add a todo..." required>
+                <input type="date" id="date-input" required>
+                <button type="submit" id="add-btn"><i class="fas fa-plus"></i></button>
+            </div>
+            <div id="error-message" class="error">Please fill in both fields.</div>
+        </form>
+
+        <div class="controls">
+            <select id="filter-select">
+                <option value="all">All Tasks</option>
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+            <button id="delete-all-btn" class="btn-danger">Delete All</button>
+        </div>
+
+        <div class="list-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>TASK</th>
+                        <th>DUE DATE</th>
+                        <th>STATUS</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="todo-tbody">
+                    </tbody>
+            </table>
+            <div id="empty-state" class="empty-state">No task found</div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
